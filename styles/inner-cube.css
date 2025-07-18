@@ -1,0 +1,41 @@
+.inner-cube {
+  position: absolute;
+  width: var(--inner-size);
+  height: var(--inner-size);
+  transform-style: preserve-3d;
+}
+
+.inner-face {
+  width: var(--inner-size);
+  height: var(--inner-size);
+  position: absolute;
+  opacity: 1;
+}
+
+.inner-north {
+  transform: translateZ(var(--inner-half-size));
+  background: var(--north-color);
+}
+
+.inner-south {
+  transform: translateZ(var(--inner-m-half-size)) rotateY(180deg);
+  background: var(--south-color);
+}
+
+.inner-west {
+  transform: translateX(var(--inner-half-size)) rotateY(90deg);
+  background: var(--west-color);
+}
+
+.inner-east {
+  transform: translateX(var(--inner-m-half-size)) rotateY(-90deg);
+  background: var(--east-color);
+}
+
+.inner-top {
+  transform: translateY(var(--inner-m-half-size)) rotateX(90deg);
+}
+
+.inner-bottom {
+  transform: translateY(var(--inner-half-size)) rotateX(-90deg);
+}

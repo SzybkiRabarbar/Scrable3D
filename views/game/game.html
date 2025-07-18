@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/styles.css">
+    <link rel="stylesheet" href="/styles/error-popup.css">
+    <link rel="stylesheet" href="/styles/outer-cube.css">
+    <link rel="stylesheet" href="/styles/overlay.css">
+    <link rel="stylesheet" href="/styles/inner-cube.css">
+    <link rel="stylesheet" href="/styles/inner-cube.css">
+    <script src="https://unpkg.com/htmx.org@2.0.2"
+        integrity="sha384-Y7hw+L/jvKeWIRRkqWYfPcvVxHzVzn5REgzbawhxAuQGwX1XWe70vji+VSeHOThJ"
+        crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/htmx-ext-ws@2.0.1/ws.js"></script>
+    <title>{{ .Title }}</title>
+</head>
+
+<body>
+    <div hx-ext="ws" ws-connect="/ws/{{ .GameUUID }}" id="container">
+        <div id="cube-container">
+            <div id="outer-cube">
+                <div class="outer-face outer-top"></div>
+                <div class="outer-face outer-bottom"></div>
+                <div class="outer-face outer-north">
+                    <div class="grid-container">
+                        <!-- <script>
+                            for (let i = 0; i < 225; i++) {
+                                document.write('<div class="grid-item"></div>');
+                            }
+                        </script> -->
+                    </div>
+                </div>
+                <div class="outer-face outer-east">
+                    <div class="grid-container">
+                        <!-- <script>
+                            for (let i = 0; i < 225; i++) {
+                                document.write('<div class="grid-item"></div>');
+                            }
+                        </script> -->
+                    </div>
+                </div>
+                <div class="outer-face outer-south">
+                    <div class="grid-container">
+                        <!-- <script>
+                            for (let i = 0; i < 225; i++) {
+                                document.write('<div class="grid-item"></div>');
+                            }
+                        </script> -->
+                    </div>
+                </div>
+                <div class="outer-face outer-west">
+                    <div class="grid-container">
+                        <!-- <script>
+                            for (let i = 0; i < 225; i++) {
+                                document.write('<div class="grid-item"></div>');
+                            }
+                        </script> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button id="rotate-left">Rotate Left</button>
+        <button id="rotate-right">Rotate Right</button>
+        <form id="test-functions" hx-vals='{"isTest": true}' ws-send>
+            <select name="actionType">
+                <option value="addTest">Add Test</option>
+                <option value="raiseExampleError">Raise Example Error</option>
+            </select>
+            <button type="submit">
+                Execute Action
+            </button>
+        </form>
+        <form 
+            id="make-play"
+            ws-send
+        >
+            <button type="submit" onclick="updateMakePlayHxVals(this.form)">
+                Play
+            </button>
+        </form>
+        <div id="availble-characters">
+        </div>
+        <div id="error-dialog"></div>
+
+    </div> <!-- ws end  -->
+    <script src="/scripts/consts.js"></script>
+    <script src="/scripts/reset-square-positions.js"></script>
+    <script src="/scripts/outer-cube-rotation.js"></script>
+    <script src="/scripts/drag-square.js"></script>
+    <script src="/scripts/get-squares-positions.js"></script>
+    <script src="/scripts/hx-forms-outputs.js"></script>
+</body>
+
+</html>

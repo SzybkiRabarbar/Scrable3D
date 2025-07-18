@@ -1,0 +1,17 @@
+<!-- <div id="error-popup" hx-swap-oob="morphdom" style="display: flex;" open>
+    <div id="dialog">
+        <button id="close-button">&times;</button>
+        <h2>Error</h2>
+        <p>{{.Error}}</p>
+    </div>
+</div> -->
+
+     
+<div id="error-dialog" hx-swap-oob="morphdom">
+    <form id="error-popup" hx-vals='{"actionType": "dismissError"}' ws-send>
+        <span>{{.Error}}</span>
+        <button type="submit">
+            Close
+        </button>
+    </form>
+</div>

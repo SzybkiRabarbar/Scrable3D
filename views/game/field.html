@@ -1,0 +1,10 @@
+<div id="outer-cube" hx-swap-oob="beforeend">
+    <div id="{{.Repr}}" class="inner-cube" style="top: {{.X}}px; left: {{.Y}}px; transform: translateZ({{.Z}}px);">
+        <div class="inner-face inner-top"></div>
+        <div class="inner-face inner-bottom"></div>
+        <div class="inner-face character inner-west">{{.Value}}</div>
+        <div class="inner-face character inner-east">{{.Value}}</div>
+        <div class="inner-face character inner-north">{{.Value}}</div>
+        <div class="inner-face character inner-south">{{.Value}}</div>
+    </div>
+</div>

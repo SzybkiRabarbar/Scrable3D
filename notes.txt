@@ -1,0 +1,21 @@
+TODO {
+    add validation that will check words from diff axis
+    add connection to game by another player or lobby
+}
+
+N (use X Y smallest Z) 0 deg
+E (use Z Y smallest X) 90 deg
+S (use X Y highest Z) 180 deg
+W (use Z Y highest X) 270 deg
+
+| ax X
+* 0 / +60 / 840 *
+top: %%px; 
+
+| ax Y
+* 0 / +60 / 840 *
+left: %%px
+
+| ax Z
+* 420 / -60 / -420 *
+transform: translateZ(%%px); 
